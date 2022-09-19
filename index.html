@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vue.js - starbase-router</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+<div>
+    <pre style="color:#d1d1d1;background:#000000;"><span style="color:#e66170; font-weight:bold; ">import</span> Vue from <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.esm.browser.js</span><span style="color:#02d045; ">'</span>
+        <span style="color:#e66170; font-weight:bold; ">import</span> VueRouter from <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">https://cdn.jsdelivr.net/npm/vue-router@3.6.5/dist/vue-router.esm.browser.js</span><span style="color:#02d045; ">'</span>
+        <span style="color:#e66170; font-weight:bold; ">import</span> App from <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">./App.vue.js</span><span style="color:#02d045; ">'</span>
+        <span style="color:#e66170; font-weight:bold; ">import</span> Data from <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">./components/Data.vue.js</span><span style="color:#02d045; ">'</span>
+        
+        Vue<span style="color:#d2cd86; ">.</span>use<span style="color:#d2cd86; ">(</span>VueRouter<span style="color:#d2cd86; ">)</span>
+        
+        <span style="color:#e66170; font-weight:bold; ">const</span> routes <span style="color:#d2cd86; ">=</span> <span style="color:#d2cd86; ">[</span>
+            <span style="color:#b060b0; ">{</span> path<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">/data/:type</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span> component<span style="color:#b060b0; ">:</span> Data <span style="color:#b060b0; ">}</span>
+        <span style="color:#d2cd86; ">]</span>
+        
+        <span style="color:#e66170; font-weight:bold; ">const</span> router <span style="color:#d2cd86; ">=</span> <span style="color:#e66170; font-weight:bold; ">new</span> VueRouter<span style="color:#d2cd86; ">(</span><span style="color:#b060b0; ">{</span>
+            routes
+        <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">)</span>
+        
+        <span style="color:#e66170; font-weight:bold; ">new</span> Vue<span style="color:#d2cd86; ">(</span><span style="color:#b060b0; ">{</span>
+            el<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#app</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
+            router<span style="color:#d2cd86; ">,</span>
+            render<span style="color:#b060b0; ">:</span> h<span style="color:#d2cd86; ">=</span><span style="color:#d2cd86; ">&gt;</span>h<span style="color:#d2cd86; ">(</span>App<span style="color:#d2cd86; ">)</span>
+        <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">)</span>
+        </pre>
+        
+        <pre style="color:#d1d1d1;background:#000000;"><span style="color:#d2cd86; ">&lt;</span>router<span style="color:#d2cd86; ">-</span><span style="color:#e66170; font-weight:bold; ">link</span> <span style="color:#e66170; font-weight:bold; ">class</span><span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">link</span><span style="color:#02d045; ">"</span> to<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">/data/people</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span>Meet the Characters<span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>router<span style="color:#d2cd86; ">-</span><span style="color:#e66170; font-weight:bold; ">link</span><span style="color:#d2cd86; ">&gt;</span> <span style="color:#d2cd86; ">|</span> 
+        <span style="color:#d2cd86; ">&lt;</span>router<span style="color:#d2cd86; ">-</span><span style="color:#e66170; font-weight:bold; ">link</span> <span style="color:#e66170; font-weight:bold; ">class</span><span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">link</span><span style="color:#02d045; ">"</span> to<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">/data/planets</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span>Exploer the Planets<span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>router<span style="color:#d2cd86; ">-</span><span style="color:#e66170; font-weight:bold; ">link</span><span style="color:#d2cd86; ">&gt;</span> 
+        
+        <span style="color:#d2cd86; ">&lt;</span>router<span style="color:#d2cd86; ">-</span>view<span style="color:#d2cd86; ">&gt;</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>router<span style="color:#d2cd86; ">-</span>view<span style="color:#d2cd86; ">&gt;</span>
+        </pre>
+
+<pre style="color:#d1d1d1;background:#000000;"><span style="color:#e66170; font-weight:bold; ">export</span> <span style="color:#e66170; font-weight:bold; ">default</span> <span style="color:#b060b0; ">{</span>
+    template<span style="color:#b060b0; ">:</span> template<span style="color:#d2cd86; ">,</span>
+    data<span style="color:#d2cd86; ">(</span><span style="color:#d2cd86; ">)</span> <span style="color:#b060b0; ">{</span>
+        <span style="color:#e66170; font-weight:bold; ">return</span> <span style="color:#b060b0; ">{</span>
+            type<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">this</span><span style="color:#d2cd86; ">.</span>$route<span style="color:#d2cd86; ">.</span>params<span style="color:#d2cd86; ">.</span>type<span style="color:#d2cd86; ">,</span>
+            items<span style="color:#b060b0; ">:</span> <span style="color:#d2cd86; ">[</span><span style="color:#d2cd86; ">]</span><span style="color:#d2cd86; ">,</span>
+        <span style="color:#b060b0; ">}</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
+    watch<span style="color:#b060b0; ">:</span> <span style="color:#b060b0; ">{</span>
+        <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">$route</span><span style="color:#02d045; ">'</span><span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">fetchItems</span><span style="color:#02d045; ">'</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
+    created<span style="color:#d2cd86; ">(</span><span style="color:#d2cd86; ">)</span> <span style="color:#b060b0; ">{</span>
+        <span style="color:#e66170; font-weight:bold; ">this</span><span style="color:#d2cd86; ">.</span>fetchItems<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">0</span><span style="color:#d2cd86; ">)</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
+    methods<span style="color:#b060b0; ">:</span> <span style="color:#b060b0; ">{</span>
+        fetchItems<span style="color:#d2cd86; ">(</span><span style="color:#d2cd86; ">)</span> <span style="color:#b060b0; ">{</span>
+            <span style="color:#e66170; font-weight:bold; ">this</span><span style="color:#d2cd86; ">.</span>type <span style="color:#d2cd86; ">=</span> <span style="color:#e66170; font-weight:bold; ">this</span><span style="color:#d2cd86; ">.</span>$route<span style="color:#d2cd86; ">.</span>params<span style="color:#d2cd86; ">.</span>type
+            <span style="color:#e66170; font-weight:bold; ">this</span><span style="color:#d2cd86; ">.</span><span style="color:#e66170; font-weight:bold; ">item</span> <span style="color:#d2cd86; ">=</span> <span style="color:#d2cd86; ">[</span><span style="color:#d2cd86; ">]</span>
+            <span style="color:#e66170; font-weight:bold; ">let</span> initial_ids <span style="color:#d2cd86; ">=</span> <span style="color:#d2cd86; ">[</span><span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">13</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">14</span><span style="color:#d2cd86; ">]</span>
+
+            <span style="color:#e66170; font-weight:bold; ">for</span> <span style="color:#d2cd86; ">(</span><span style="color:#e66170; font-weight:bold; ">let</span> i <span style="color:#e66170; font-weight:bold; ">in</span> initial_ids<span style="color:#d2cd86; ">)</span> <span style="color:#b060b0; ">{</span>
+                
+                <span style="color:#e66170; font-weight:bold; ">let</span> id <span style="color:#d2cd86; ">=</span> initial_ids<span style="color:#d2cd86; ">[</span>i<span style="color:#d2cd86; ">]</span>
+                console<span style="color:#d2cd86; ">.</span><span style="color:#e66170; font-weight:bold; ">log</span><span style="color:#d2cd86; ">(</span><span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">id</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span> id<span style="color:#d2cd86; ">)</span>
+                fetch<span style="color:#d2cd86; ">(</span><span style="color:#02d045; ">`</span><span style="color:#00c4c4; ">http://swapi.dev/api/</span><span style="color:#02d045; ">${</span><span style="color:#e66170; font-weight:bold; ">this</span><span style="color:#d2cd86; ">.</span><span style="color:#00c4c4; ">type</span><span style="color:#02d045; ">}</span><span style="color:#00c4c4; ">/</span><span style="color:#02d045; ">${</span><span style="color:#00c4c4; ">id</span><span style="color:#02d045; ">}</span><span style="color:#02d045; ">`</span><span style="color:#d2cd86; ">,</span> <span style="color:#b060b0; ">{</span>
+                    method<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">GET</span><span style="color:#02d045; ">'</span>
+                <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">)</span>
+                    <span style="color:#d2cd86; ">.</span>then<span style="color:#d2cd86; ">(</span>response <span style="color:#d2cd86; ">=</span><span style="color:#d2cd86; ">&gt;</span> response<span style="color:#d2cd86; ">.</span>json<span style="color:#d2cd86; ">(</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">)</span>
+                    <span style="color:#d2cd86; ">.</span>then<span style="color:#d2cd86; ">(</span>json <span style="color:#d2cd86; ">=</span><span style="color:#d2cd86; ">&gt;</span> <span style="color:#e66170; font-weight:bold; ">this</span><span style="color:#d2cd86; ">.</span>items<span style="color:#d2cd86; ">.</span>push<span style="color:#d2cd86; ">(</span>json<span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">)</span>
+            <span style="color:#b060b0; ">}</span>
+        <span style="color:#b060b0; ">}</span>
+    <span style="color:#b060b0; ">}</span>
+<span style="color:#b060b0; ">}</span>
+</pre>
+
+</div>
+<div id="app"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="./src/main.js" type="module"></script>
+</body>
+</html>
